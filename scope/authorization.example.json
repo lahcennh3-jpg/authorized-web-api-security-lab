@@ -3,52 +3,62 @@
   "project_id": "AWASL-P1",
   "status": "BLOCKED",
   "target": {
-    "target_id": "REPLACE_ME",
+    "target_id": "juice-shop-v20.1.1-codespace-lab-001",
     "application_name": "OWASP Juice Shop",
-    "version": "REPLACE_ME",
+    "version": "20.1.1",
     "source_repository": "https://github.com/juice-shop/juice-shop",
-    "source_ref": "REPLACE_ME",
-    "artifact_reference": "REPLACE_ME",
-    "artifact_sha256": "REPLACE_ME",
-    "environment_id": "REPLACE_ME",
-    "private_base_url": "REPLACE_ME",
+    "source_ref": "f915bddd82790d0f3018902d36ae9b4241a5f51f",
+    "artifact_reference": "docker.io/bkimminich/juice-shop:v20.1.1@sha256:cd58d79c5cb4d82f22fbaf616f9ff43bbd04ba630cd6b448a9ed99cf652fcebf",
+    "artifact_sha256": "cd58d79c5cb4d82f22fbaf616f9ff43bbd04ba630cd6b448a9ed99cf652fcebf",
+    "environment_id": "github-codespaces-private-lab-001",
+    "private_base_url": "http://127.0.0.1:3000",
     "authorized_interfaces": [
-      "REPLACE_ME"
+      "127.0.0.1:3000 -> container 3000/tcp",
+      "Codespaces forwarded port 3000, visibility private only"
     ]
   },
   "authorization": {
-    "target_owner": "REPLACE_ME",
-    "authorized_by": "REPLACE_ME",
-    "authority_basis": "REPLACE_ME",
-    "evidence_reference": "REPLACE_ME",
-    "start_utc": "REPLACE_ME",
-    "end_utc": "REPLACE_ME",
+    "target_owner": "REPLACE_ME_PRIVATE_IDENTITY",
+    "authorized_by": "REPLACE_ME_PRIVATE_IDENTITY",
+    "authority_basis": "Self-owned Juice Shop application instance deployed in a private GitHub Codespace; GitHub and Codespaces infrastructure are excluded",
+    "evidence_reference": "AUTH-AWASL-P1-20260725-001",
+    "start_utc": "2026-07-25T22:23:02Z",
+    "end_utc": "2026-08-24T22:23:02Z",
     "permitted_techniques": [
-      "REPLACE_ME"
+      "White-box source and configuration review",
+      "Manual browser, HTTP, and API testing",
+      "Automated testing and regression tests limited to 2 requests per second with concurrency 1"
     ],
     "approved_tools": [
-      "REPLACE_ME"
+      "Browser developer tools",
+      "curl",
+      "Repository linters",
+      "Unit and regression-test runners"
     ],
     "explicit_exclusions": [
       "OWASP public demonstration instances",
       "GitHub and GitHub Codespaces infrastructure",
       "Cloud-provider infrastructure",
-      "Third-party services",
-      "Production systems"
+      "Third-party and outbound services",
+      "Production systems",
+      "Every unlisted host, interface, port, API, account, and dependency",
+      "Denial-of-service and resource-exhaustion testing",
+      "Destructive modification, persistence, and malware",
+      "Social engineering and credential collection",
+      "Outbound callbacks or SSRF to real external services"
     ],
     "stop_conditions": [
-      "Target identity or environment differs from this record",
-      "Laboratory port becomes public",
-      "Real or third-party data is encountered",
+      "Observed target or environment differs from this record",
+      "Port 3000 becomes public or another interface is exposed",
+      "Real data or a third-party interaction is encountered",
       "Authorization expires or is revoked",
-      "Unexpected instability or impact occurs"
+      "Unexpected instability or unintended impact occurs"
     ],
     "cleanup_obligations": [
-      "Stop laboratory processes",
-      "Close forwarded ports",
-      "Remove synthetic test accounts and uploaded artifacts",
-      "Revoke temporary credentials",
-      "Review retained evidence"
+      "Stop and remove the laboratory container",
+      "Close port forwarding and verify no listener remains",
+      "Remove synthetic accounts, uploads, test data, and temporary credentials",
+      "Sanitize, hash, review, retain, or securely delete evidence according to the authorization record"
     ]
   },
   "safeguards": {
