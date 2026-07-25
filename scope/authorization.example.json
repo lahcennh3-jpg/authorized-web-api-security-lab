@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "project_id": "AWASL-P1",
+  "status": "BLOCKED",
+  "target": {
+    "target_id": "REPLACE_ME",
+    "application_name": "OWASP Juice Shop",
+    "version": "REPLACE_ME",
+    "source_repository": "https://github.com/juice-shop/juice-shop",
+    "source_ref": "REPLACE_ME",
+    "artifact_reference": "REPLACE_ME",
+    "artifact_sha256": "REPLACE_ME",
+    "environment_id": "REPLACE_ME",
+    "private_base_url": "REPLACE_ME",
+    "authorized_interfaces": [
+      "REPLACE_ME"
+    ]
+  },
+  "authorization": {
+    "target_owner": "REPLACE_ME",
+    "authorized_by": "REPLACE_ME",
+    "authority_basis": "REPLACE_ME",
+    "evidence_reference": "REPLACE_ME",
+    "start_utc": "REPLACE_ME",
+    "end_utc": "REPLACE_ME",
+    "permitted_techniques": [
+      "REPLACE_ME"
+    ],
+    "approved_tools": [
+      "REPLACE_ME"
+    ],
+    "explicit_exclusions": [
+      "OWASP public demonstration instances",
+      "GitHub and GitHub Codespaces infrastructure",
+      "Cloud-provider infrastructure",
+      "Third-party services",
+      "Production systems"
+    ],
+    "stop_conditions": [
+      "Target identity or environment differs from this record",
+      "Laboratory port becomes public",
+      "Real or third-party data is encountered",
+      "Authorization expires or is revoked",
+      "Unexpected instability or impact occurs"
+    ],
+    "cleanup_obligations": [
+      "Stop laboratory processes",
+      "Close forwarded ports",
+      "Remove synthetic test accounts and uploaded artifacts",
+      "Revoke temporary credentials",
+      "Review retained evidence"
+    ]
+  },
+  "safeguards": {
+    "self_hosted_target_only": true,
+    "private_ports_only": true,
+    "synthetic_data_only": true,
+    "public_demo_excluded": true,
+    "third_party_systems_excluded": true,
+    "denial_of_service_prohibited": true,
+    "destructive_testing_prohibited": true,
+    "social_engineering_prohibited": true,
+    "secrets_must_not_be_committed": true
+  },
+  "attestations": {
+    "record_complete": false,
+    "ownership_verified": false,
+    "authorization_verified": false,
+    "rules_of_engagement_approved": false
+  }
+}
